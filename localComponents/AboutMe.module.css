@@ -1,0 +1,53 @@
+.bodyAboutMe{
+    background-color: rgb(0, 0, 0);
+    color: white;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-top: 32px;
+}
+.bodyAboutMe h2{
+    font-size: 32px;
+    font-weight: 750;
+    position: relative;
+}
+.bodyAboutMe h2 strong{
+    position: relative;
+    font-weight: 750;
+    color: var(--mainColor);
+}
+/*
+.bodyAboutMe h2 strong::before{
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 110%;
+    height: 3.5px;
+    background-color: var(--mainColor);
+    border-radius: 2px;
+}
+    */
+.containerText{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+.bodyAboutMe p{
+    width: 90%;
+    font-size: 18px;
+    line-height: 1.5;
+}
+.containerImg{
+  position: relative;  /* obligatoriu pentru fill */
+  width: 90%;        /* sau cât vrei tu */
+  height: 400px;
+  overflow: hidden;
+  border-radius: 6px;
+}
+.containerImg img{
+    object-fit: cover;
+}

@@ -1,0 +1,146 @@
+.statsSection{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    gap: 10px;
+    row-gap: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    margin: auto;
+    padding: 32px 0;
+}
+.card{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: var(--CardColor);
+    border-radius: 10px;
+    padding: 8px;
+    position: relative;
+}
+.card:nth-of-type(1),
+.card:nth-of-type(2){
+ height: 200px;
+}
+.card:nth-of-type(3),
+.card:nth-of-type(4){
+ height: 180px;
+}
+.card:nth-of-type(5){
+    grid-column: 1/3;
+    height: 180px;
+}
+.icon{
+    grid-column: 1/2;
+    grid-row: 1/3;
+    margin: auto;
+}
+.counter{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.counter .plus{
+    color: white;
+    font-size: 40px;
+    font-weight: 500;
+}
+.titleCard{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Video */
+
+.BodyVideo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 16px 0;
+}
+.BodyVideo h3{
+    color: white;
+    text-align: center;
+    width: 85%;
+    font-size: 24px;
+    font-weight: 750;
+}
+.BodyVideo h3 span{
+    position: relative;
+    font-weight: 900;
+}
+.BodyVideo h3 strong{
+    padding: 1px 4px;
+    border-radius: 6px;
+    font-weight: 750; 
+    color: var(--mainColor);
+}
+
+.BodyVideo h3 span::before{
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left:50%;
+    transform: translateX(-50%);
+    background-color: var(--mainColor);
+    height: 3.25px;
+    width: 110%;
+    z-index: 2;
+    border-radius: 2px;
+}
+
+
+.videoContainer{
+    width: 90%;
+    margin: auto;
+    height: 500px;
+    position: relative;
+}
+.videoContainer::before{
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: rgba(0, 0, 0, 0);
+    height: 50px;
+    width: 50px;
+    z-index: 2;
+    border-top: 3.5px solid var(--mainColor);
+    border-right: 3.5px solid var(--mainColor);
+    border-top-right-radius: 12px;
+}
+.videoContainer::after{
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    background-color: rgba(0, 0, 0, 0);
+    height: 50px;
+    width: 50px;
+    z-index: 2;
+    border-bottom: 3.5px solid var(--mainColor);
+    border-left: 3.5px solid var(--mainColor);
+    border-bottom-left-radius: 12px;
+}
+.videoContainer video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    position: relative;
+}

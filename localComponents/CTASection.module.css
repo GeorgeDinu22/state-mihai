@@ -1,0 +1,99 @@
+.wrapper {
+  padding-bottom: 32px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(125px);
+  opacity: 0;
+  transition: all 750ms ease-in-out;
+}
+.wrapper.show{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 750;
+  color: white;
+}
+
+
+/* Scroller */
+.scroller{
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+.scroller::before,
+.scroller::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px;      /* cât de mare să fie fade-ul */
+  height: 100%;
+  z-index: 5;
+  pointer-events: none; /* important – să nu blocheze scrollul vizual */
+}
+
+/* Fade stânga */
+.scroller::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    #000000 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+/* Fade dreapta */
+.scroller::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    #000000 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.track {
+  display: flex;
+  animation: scrollLeft 28s linear infinite;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.reverse {
+  animation: scrollRight 28s linear infinite;
+}
+
+.imageWrapper{
+  position: relative;
+  width: 200px;
+  height: 350px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid var(--borderColor);
+  background: #0d0d0d;
+  transition: border 250ms ease;
+}
+.imageWrapper img{
+    object-fit: cover;
+}
+.imageWrapper:hover{
+    border: 2px solid var(--mainColor);
+}
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-200px * 4 - 16px * 4)); }
+}
+
+@keyframes scrollRight {
+   0% {transform: translateX(calc(-200px * 4 - 16px * 4)); }
+  100% {  transform: translateX(0); }
+}
+
