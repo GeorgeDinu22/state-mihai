@@ -2,6 +2,8 @@ import { supabaseServer } from "@/lib/supabaseServer";
 import PieChartClient from "../components/PieChartClient";
 import VerticalLinesChart from "../components/VerticalLinesChart";
 
+export const dynamic = 'force-dynamic';
+
 export default async function Statistici(){
     const supabase = await supabaseServer();
 

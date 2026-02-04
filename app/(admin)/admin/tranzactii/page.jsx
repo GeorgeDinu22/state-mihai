@@ -2,6 +2,8 @@ import './tranzactii.css';
 import TranzactiiTabel from '../components/TranzactiiTabel';
 import { supabaseServer } from "@/lib/supabaseServer";
 
+export const dynamic = 'force-dynamic';
+
 export default async function Tranzactii() {
     const supabase = await supabaseServer();
 

@@ -5,6 +5,8 @@ import AdminGuard from "./AdminGuard";
 import './dashboard.css';
 import ContinutAdmin from "./components/ContinutAdmin";
 
+export const dynamic = 'force-dynamic';
+
 export default async function AdminIndexPage() {
 
   const supabase = await supabaseServer();
