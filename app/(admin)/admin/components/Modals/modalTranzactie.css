@@ -233,5 +233,10 @@
 }
 
 @media(max-width:649px){
-    
+    .statusBadge{
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-bottom: 12px;
+    }
 }
