@@ -1,0 +1,237 @@
+/* Păstrăm reset-ul și wrapper-ul tău */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.successWrapper {
+  min-height: 100dvh; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000000;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.successCard {
+  background: var(--CardColor);
+  border: 1px solid var(--borderColor);
+  border-radius: 12px;
+  text-align: center;
+  max-width: 550px;
+  color: white;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px; 
+}
+
+
+h1 {
+  font-size: 28px;
+  font-weight: 750;
+  margin: 8px 0;
+  color: white;
+}
+
+h2 {
+  margin-top: 6px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #cccccc; 
+}
+p{
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #cccccc; 
+}
+
+.hr {
+  border-top: 1px dashed var(--borderColor);
+  margin: 1.2rem 0;
+  width: 100%;
+}
+
+
+
+.containerComanda {
+  margin-top: 1rem;
+  width: 100%;
+  text-align: left; 
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+  color: var(--mainColor); 
+}
+
+.section-header h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.order-card {
+  border-radius: 12px;
+
+  width: 100%;
+}
+
+.order-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.main-row .order-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+}
+
+.main-row .order-price {
+  font-weight: 700;
+  color: white;
+}
+
+.secondary-row {
+  font-size: 1rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.order-includes-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.includes-label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--mainColor);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.includes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.includes-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: #dddddd;
+  margin-bottom: 6px;
+}
+
+/* Linia de total tip chitanță în tema dark */
+.receipt-divider {
+  border-top: 1px dashed var(--borderColor);
+  margin: 1.2rem 0;
+}
+
+.total-row {
+  margin-bottom: 0;
+}
+
+.total-label {
+  font-weight: 750;
+  color: var(--mainColor);
+  font-size: 1.2rem;
+}
+
+.total-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: white; /* Prețul final este culoarea ta principală */
+}
+
+/* Butonul */
+.btn {
+  padding: 12px 28px;
+  border-radius: 8px;
+  background: var(--mainColor);
+  color: white;
+  display: inline-block;
+  margin-top: 25px;
+  text-decoration: none;
+  transition: all 250ms ease;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  filter: brightness(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+.errorPageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0a0a0a; 
+  color: white;
+  padding: 20px;
+}
+
+.errorContent {
+  text-align: center;
+  max-width: 350px;
+}
+
+.errorIcon {
+  font-size: 80px;
+  color: #f56565; 
+  margin-bottom: 15px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.errorContent h2 {
+  font-size: 36px;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.errorContent p {
+  font-size: 18px;
+  color: #a0a0a0;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.errorContent p:last-of-type {
+  font-size: 15px;
+  margin-top: 10px;
+  color: #888; 
+}
+
+.errorLink {
+  color: var(--mainColor); 
+  text-decoration: underline;
+  font-weight: 600;
+  cursor: pointer;
+}

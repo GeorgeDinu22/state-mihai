@@ -2,20 +2,25 @@
 
 import Link from 'next/link';
 import styles from './Pachete.module.css';
-import { Gem, TrendingUp, Trophy } from 'lucide-react';
-import { useEffect, useRef } from 'react';
-import { icon } from '@fortawesome/fontawesome-svg-core';
+import * as Icons from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import CheckOutModal from '@/localComponents/CheckOutModal/CheckOutModal.jsx';
 
-export default function Pachete(){
-
-   const iconsMap = {
-    Gem: Gem,
-    TrendingUp: TrendingUp,
-    Trophy: Trophy,
-  };
+export default function Pachete({produse}){
 
     const cardRefs = useRef([]);
     const titluRef = useRef(null);
+    const infoRef = useRef(null);
+
+    const [show, setShow] = useState(false);
+    const [pachetPressed, setPachetPressed] = useState(null);
+    const [pachetInfo, setPachetInfo] = useState(null);
+
+    function HandlePachetClick(produs){
+        setShow(true);
+        setPachetInfo(produs);
+        setPachetPressed(true);
+    }
 
  useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -25,7 +30,7 @@ export default function Pachete(){
                 }
             });
         },{
-            threshold: 0.5
+            threshold: 0.35
         });
 
         cardRefs.current.forEach(card => {
@@ -35,133 +40,124 @@ export default function Pachete(){
         if(titluRef.current){
             observer.observe(titluRef.current);
         }
+        if(infoRef.current){
+           observer.observe(infoRef.current);
+        }
 
         return () => observer.disconnect();
     })
 
-
-
-const Pachete = [
-  {
-    id: 1,
-    icon:"TrendingUp",
-    titlu: "Fitness Basic",
-    colorTitlu: "black",
-    glowCard: "#00ff99",
-    includes: [
-      "💪 Plan de antrenament adaptat nivelului tău",
-      "🥗 Ghid de nutriție de bază",
-      "💬 Suport săptămânal prin WhatsApp",
-    ],
-    excludes: [
-      "🥗 Plan alimentar personalizat",
-      "🎥 Feedback pe execuțiile exercițiilor (video)",
-      "📹 Check-in video",
-      "📊 Monitorizare zilnică a progresului",
-      "👥 Acces la comunitatea privată",
-    ],
-    pret: 500,
-  },
-  {
-    id: 2,
-    icon:"Trophy",
-    titlu: "Fitness Advanced",
-    colorTitlu: "white",
-    glowCard: "#4da6ff",
-    bestValue: "Best Deal",
-    includes: [
-      "✨ Tot ce include pachetul Basic",
-      "💪 Plan de antrenament 100% personalizat",
-      "🥗 Plan alimentar detaliat adaptat obiectivului tău",
-      "🎥 Feedback bilunar pe execuții (video check-in)",
-      "📲 Acces la platforma de antrenamente",
-      "💬 Suport extins prin WhatsApp",
-    ],
-    excludes: [
-      "🧑‍🏫 Antrenor dedicat 1-la-1",
-      "📊 Monitorizare zilnică",
-      "🔄 Plan actualizat săptămânal",
-      "🎟️ Acces VIP la workshop-uri și comunitate privată",
-    ],
-    pret: 800,
-  },
-  {
-    id: 3,
-    icon:"Gem",
-    titlu: "Fitness Premium",
-    colorTitlu: "black",
-    glowCard: "#ffcc00",
-    includes: [
-      "👑 Tot ce include pachetul Advanced",
-      "🧑‍🏫 Antrenor dedicat 1-la-1 (remote)",
-      "🔄 Plan adaptat și actualizat săptămânal",
-      "📊 Monitorizare zilnică prin aplicație",
-      "🎟️ Acces VIP la workshop-uri și comunitate privată",
-    ],
-    excludes: [
-      "🏋️‍♂️ Ședințe fizice în sală (program exclusiv remote)",
-    ],
-    pret: 1200,
-  },
-];
-
-
-
+  if(Array.isArray(produse) && produse.length > 0){
     return(
         <>
-       
+         {pachetPressed && (
+      <CheckOutModal
+        show={show}
+        data={pachetInfo}
+        close={() => {
+          setShow(false); 
+
+          setTimeout(() => {
+            setPachetPressed(false);
+          }, 500);
+        }}
+      />
+    )}
+       <div id="pachete"></div>
             <section 
-            id="preturi"
             className={styles.bodyPachete}>
                 <h3 className={styles.titluSection} ref={titluRef}>
                 Alege pachetul potrivit pentru tine
                 </h3>
+                <div ref={infoRef} className={styles.infoPachete}>
+                  Daca nu esti multumit de pachetul cumparat si nu ai rezultate vizibile, poti cere banii inapoi
+                  <br/>
+
+                  <div>
+                  Citeste 
+                  <Link className={styles.link} href="/politica-retur">Politica de Retur</Link>
+                  </div>
+                 
+                </div>
                 <div className={styles.containerPachete}>
-                    {Pachete.map((pachet,index) => {
-                      const Icon = iconsMap[pachet.icon] || Gem;
+                    {produse.map((prod) => {
+                      const Icon = Icons[prod.icon] || Gem;
+
+                      const includesList = prod.includes
+                        ? prod.includes.split("\n").filter(line => line.trim() !== "")
+                        : [];
+                      
+                      const excludedList = prod.exclued 
+                        ? prod.exclued.split("\n").filter(line => line.trim() !== "")
+                        : [];
 
                       return(
-                        <div 
-                        ref={(el) => (cardRefs.current[index] = el)}
-                        className={styles.card} 
-                        style={{ "--glow-color": pachet.glowCard }} 
-                        key={index}>
-                            {pachet.bestValue && (
-                            <div className={styles.bestValue}>
-                                {pachet.bestValue}
-                            </div>
-                            )}
+          <div
+            ref={(el) => (cardRefs.current[prod.id] = el)}
+            className={styles.card}
+            style={{
+              "--glow-color": prod.accentColor,
+              pointerEvents: prod.isActive ? "auto" : "none",
+              overflow: !prod.isActive ? "hidden" : "none",
+            }}
+            key={prod.id}
+          >
 
-                          <div className={styles.iconCard}>
-                               <Icon
-                                color={pachet.glowCard}
-                                strokeWidth={1}
-                                size={32}
-                               />
-                          </div>
+        {prod.isBestDeal && (
+          <div style={{filter: !prod.isActive ? "grayscale(1)" : "none"}} className={styles.bestValue}>{prod.textBestDeal}</div>
+        )}
+       
 
-                        <p className={styles.titlu}>{pachet.titlu}</p>
-                        <p className={styles.pret}>{pachet.pret} RON</p>
-                      <ul className={styles.includes}>
-                        <p className={styles.includedTitle}>Include</p>
-                            {pachet.includes.map((item, i) => (
-                                <li key={i}>{item}</li>
-                            ))}
-                        </ul>
+        <div className={prod.isActive ? styles.contentWrapper : `${styles.contentWrapper} ${styles.pachetInactiv}`}>
+          
+          <div className={styles.iconCard}>
+            <Icon
+              color={prod.accentColor}
+              strokeWidth={1.5}
+              size={32}
+            />
+          </div>
 
-                        <ul className={styles.excludes}>
-                          <p className={styles.excludedTitle}>Exclude</p>
-                              {pachet.excludes.map((item, i) => (
-                                <li key={i}>{item}</li>
-                              ))}
-                        </ul>
+          <p className={styles.titlu}>{prod.titlu}</p>
+          <p className={styles.pret}>{prod.pret} RON</p>
 
-                        <Link className={styles.cta} href='#'>Incepe Acum</Link>
-                    </div>
+          {prod.durata && (
+            <p className={styles.durata}>{"Durata: " +  prod.durata}</p>
+          )}
+
+          <ul className={styles.includes}>
+            <p className={styles.includedTitle}>Include</p>
+            {includesList.length > 0 && (
+              includesList.map((item, i) => <li key={i}>{item}</li>)
+            )}
+          </ul>
+
+          <ul className={styles.excludes}>
+            <p className={styles.excludedTitle}>Exclude</p>
+            {excludedList.length > 0 && (
+              excludedList.map((item, i) => <li key={i}>{item}</li>)
+            )}
+          </ul>
+
+          <div
+            onClick={() => HandlePachetClick(prod)}
+            className={styles.cta}
+          >
+            {prod.textBtn}
+          </div>
+        </div>
+
+        {!prod.isActive && (
+          <div className={styles.backgroundInactiv}>
+            <p>{prod.textInactiv}</p>
+          </div>
+        )}
+    </div>
                       )
                   })}
                 </div>
             </section>
         </>
     )
+  }
 }

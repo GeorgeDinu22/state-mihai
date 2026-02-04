@@ -17,7 +17,7 @@ export default function CtaScroll(){
                 }
             });
         },{
-            threshold: 0.5
+            threshold: 0.35
         });
 
         if(sectionRef.current){

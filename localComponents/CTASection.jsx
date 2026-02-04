@@ -17,7 +17,7 @@ const sectionRef = useRef(null);
                 }
             });
         },{
-            threshold: 0.35
+            threshold: 0.25
         });
 
         if(sectionRef.current){
@@ -29,37 +29,49 @@ const sectionRef = useRef(null);
 
 
   const images = [
-    "/testimoniale/recenzie1.png",
-    "/testimoniale/recenzie2.png",
-    "/testimoniale/recenzie3.png",
-    "/testimoniale/recenzie4.png",
+    "/testimoniale/recenzie1.webp",
+    "/testimoniale/testimonial3.webp",
+    "/testimoniale/testimonial4.webp",
+    "/testimoniale/testimonial2.webp",
+    "/testimoniale/testimonial1.webp",
+    "/testimoniale/testimonial11.webp",
+    "/testimoniale/testimonial13.webp",
+
   ];
 
-  // dublăm imaginile pentru loop perfect
+    const images2 = [
+    "/testimoniale/testimonial8.webp",
+    "/testimoniale/testimonial6.webp",
+    "/testimoniale/testimonial7.webp",
+    "/testimoniale/testimonial9.webp",
+    "/images/nutritie.webp",
+    "/testimoniale/testimonial5.webp",
+    "/testimoniale/testimonial10.webp",
+  ];
+
   const loopImages = [...images, ...images];
+  const loopImages2 = [...images2, ...images2];
 
   return (
     <div ref={sectionRef} className={styles.wrapper}>
 
-      <h2 className={styles.title}>Nici acum nu te-ai hotărât?</h2>
+      <h2 className={styles.title}>Nici acum nu te-ai <span>hotărât?</span></h2>
 
-      {/* SCROLLER 1 */}
       <div className={styles.scroller}>
         <div className={styles.track}>
           {loopImages.map((src, i) => (
             <div className={styles.imageWrapper} key={`line1-${i}`}>
-              <Image fill src={src} alt="client" />
+              <Image className={styles.sliderImg} width={350} height={450} src={src} alt="client" />
             </div>
           ))}
         </div>
       </div>
 
-      {/* SCROLLER 2 */}
       <div className={styles.scroller}>
         <div className={`${styles.track} ${styles.reverse}`}>
-          {loopImages.map((src, i) => (
+          {loopImages2.map((src, i) => (
             <div className={styles.imageWrapper} key={`line2-${i}`}>
-              <Image fill src={src} alt="client" />
+              <Image className={styles.sliderImg} width={350} height={450} src={src} alt="client" />
             </div>
           ))}
         </div>

@@ -58,7 +58,7 @@ export default function BeforeAfterSlider({
       <Image
       width={500}
       height={500}
-        src={beforeImage}
+        src={afterImage}
         className={styles.sliderBefore}
         alt="Imagine înainte de detailing"
       />
@@ -66,7 +66,7 @@ export default function BeforeAfterSlider({
        width={500}
       height={500}
         ref={afterRef}
-        src={afterImage}
+        src={beforeImage}
         className={styles.sliderAfter}
         alt="Imagine după detailing"
       />

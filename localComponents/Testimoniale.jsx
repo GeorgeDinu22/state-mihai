@@ -5,7 +5,7 @@ import styles from './Testimoniale.module.css';
 import Image from 'next/image';
 
 export default function Testimoniale(){
-    const Images = ['/testimoniale/recenzie1.png', '/testimoniale/recenzie1.png', '/testimoniale/recenzie1.png', '/testimoniale/recenzie1.png'];
+    const Images = ['/testimoniale/testimonial15.webp', '/testimoniale/testimonial6.webp', '/testimoniale/testimonial4.webp', '/testimoniale/testimonial3.webp', '/testimoniale/testimonial2.webp','/testimoniale/testimonial7.webp',];
 
     const cardRefs = useRef([]);
     const titluRef = useRef(null);
@@ -39,14 +39,20 @@ export default function Testimoniale(){
                 Ce spun cei care au făcut pasul spre <strong>schimbare</strong>
             </h3>
             <div className={styles.containerTestimoniale}>
+                
             {Images.map((img,index) => (
                   <div
                     ref={(el) => (cardRefs.current[index] = el)}
                     className={styles.card}
                     key={index}>
                     <Image className={styles.image}
-                    fill
+                    width={600}
+                    height={600}
                     src={img}
+                    sizes='100vw'
+                    loading="lazy"
+                    unoptimized={true}
+                    style={{ width: '100%', height: 'auto' }}
                     alt='Mihai State - Testimoniale'
                     />
                 </div>

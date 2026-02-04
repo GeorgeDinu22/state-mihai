@@ -4,12 +4,12 @@
     align-items: center;
     gap: 24px;
     padding: 32px 0;
-    margin-bottom: 32px;
     overflow: hidden;
     position: relative;
     border-top-left-radius: 24px;
     border-top-right-radius: 24px;
     margin-top: 32px;
+    width: 100%;
 }
 .testimonialeBody::before {
   content: "";
@@ -25,7 +25,7 @@
   z-index: -1;
 }
 .testimonialeBody .titlu{
-    font-size: 24px;
+    font-size: clamp(24px,3vw,32px);
     color: white;
     text-align: center;
     width: 90%;
@@ -49,10 +49,11 @@
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    position: relative;
 }
 .containerTestimoniale .card{
-    width: 90vw;
-    height: 300px;
+    width: 100%;
+    height:auto;
     position: relative;
     border-radius: 12px;
     overflow: hidden;
@@ -68,7 +69,15 @@
     object-fit: cover;
 }   
 
-
+.opacIcons{
+    position: absolute;
+    right: 4px;
+    top: 20px;
+    z-index: -1;
+}
+.opacIcons:nth-of-type(2){
+    left:4px;
+}
 
 .bodyTestimoniale2{
     width: 80%;
@@ -77,4 +86,15 @@
     align-items: center;
     margin: 0 auto;
     margin-bottom: 32px;
+}
+
+@media(min-width:750px){
+    .containerTestimoniale{
+        display: grid;
+        max-width: 1000px;
+        grid-template-columns: 1fr 1fr;
+    }
+    .testimonialeBody .titlu{
+        margin-bottom: 20px;
+    }
 }

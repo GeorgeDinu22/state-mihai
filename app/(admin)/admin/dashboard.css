@@ -1,0 +1,95 @@
+.containerStats{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    row-gap: 12px;
+}
+.containerStats .cardStats{
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid var(--borderColor);
+    background-color: var(--CardColor);
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap:6px;
+}
+.containerStats .cardStats strong{
+  font-size: 24px;
+}
+.incasari{
+  color: var(--mainColor);
+  font-size: 24px;
+}
+.cardStats p{
+  font-weight: 750;
+  font-size: 24px;
+}
+
+@media(max-width:649px){
+  .containerStats{
+      display: flex;
+      flex-direction: column;
+  }
+}
+
+.grafic{
+  margin-top: 24px;
+  grid-column: 1/3;
+  display: flex;
+  flex-direction: column;
+  align-items: start !important;
+  height: 370px !important;
+}
+.grafic p{
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+.periodSelector{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.periodSelector button{
+  background-color: var(--borderColor);
+  border: none;
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 250ms ease;
+}
+.periodSelector button.active{
+  background-color: var(--mainColor);
+  font-weight: bold;
+}
+
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 8px solid var(--mainColor);
+  animation:
+    l20-1 0.8s infinite linear alternate,
+    l20-2 1.6s infinite linear;
+  position: fixed;
+  top:20%;
+  left: 35%;
+}
+@keyframes l20-1{
+   0%    {clip-path: polygon(50% 50%,0       0,  50%   0%,  50%    0%, 50%    0%, 50%    0%, 50%    0% )}
+   12.5% {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100%   0%, 100%   0%, 100%   0% )}
+   25%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 100% 100%, 100% 100% )}
+   50%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+   62.5% {clip-path: polygon(50% 50%,100%    0, 100%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+   75%   {clip-path: polygon(50% 50%,100% 100%, 100% 100%,  100% 100%, 100% 100%, 50%  100%, 0%   100% )}
+   100%  {clip-path: polygon(50% 50%,50%  100%,  50% 100%,   50% 100%,  50% 100%, 50%  100%, 0%   100% )}
+}
+@keyframes l20-2{ 
+  0%    {transform:scaleY(1)  rotate(0deg)}
+  49.99%{transform:scaleY(1)  rotate(135deg)}
+  50%   {transform:scaleY(-1) rotate(0deg)}
+  100%  {transform:scaleY(-1) rotate(-135deg)}
+}

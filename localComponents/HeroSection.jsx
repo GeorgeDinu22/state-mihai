@@ -6,62 +6,46 @@ import styles from './HeroSection.module.css'
 export default function HeroSection(){
 
 const images = [
-    "/testimoniale/recenzie1.png",
-    "/testimoniale/recenzie2.png",
-     "/testimoniale/recenzie3.png",
-    "/testimoniale/recenzie4.png",
-
-    "/testimoniale/recenzie1.png",
-    "/testimoniale/recenzie2.png",
-     "/testimoniale/recenzie3.png",
-    "/testimoniale/recenzie4.png",
-
-     "/testimoniale/recenzie1.png",
-    "/testimoniale/recenzie2.png",
-     "/testimoniale/recenzie3.png",
-    "/testimoniale/recenzie4.png",
-
-
-     "/testimoniale/recenzie1.png",
-    "/testimoniale/recenzie2.png",
-     "/testimoniale/recenzie3.png",
-    "/testimoniale/recenzie4.png",
-
-
-     "/testimoniale/recenzie1.png",
-    "/testimoniale/recenzie2.png",
-     "/testimoniale/recenzie3.png",
-    "/testimoniale/recenzie4.png",
-
-
-      "/testimoniale/recenzie1.png",
-    "/testimoniale/recenzie2.png",
-     "/testimoniale/recenzie3.png",
-    "/testimoniale/recenzie4.png",
-
-
-     "/testimoniale/recenzie1.png",
-    "/testimoniale/recenzie2.png",
-     "/testimoniale/recenzie3.png",
-    "/testimoniale/recenzie4.png",
-
-
-      "/testimoniale/recenzie1.png",
-    "/testimoniale/recenzie2.png",
-     "/testimoniale/recenzie3.png",
-    "/testimoniale/recenzie4.png",
-
-     "/testimoniale/recenzie1.png",
-    "/testimoniale/recenzie2.png",
-     "/testimoniale/recenzie3.png",
-    "/testimoniale/recenzie4.png",
-
-     "/testimoniale/recenzie1.png",
-    "/testimoniale/recenzie2.png",
-     "/testimoniale/recenzie3.png",
-    "/testimoniale/recenzie4.png",
+    "/testimoniale/recenzie1.webp",
+    "/testimoniale/testimonial5.webp",
+    "/testimoniale/testimonial13.webp",
+    "/testimoniale/testimonial2.webp",
     
-  ];
+    "/testimoniale/testimonial8.webp",
+    "/testimoniale/testimonial1.webp",
+    "/images/nutritie.webp",
+    "/testimoniale/testimonial4.webp",
+    
+    "/testimoniale/testimonial10.webp",
+    "/testimoniale/recenzie1.webp",
+    "/testimoniale/testimonial6.webp",
+    "/testimoniale/testimonial11.webp",
+    
+    "/testimoniale/testimonial3.webp",
+    "/testimoniale/testimonial9.webp",
+    "/testimoniale/testimonial7.webp",
+    "/testimoniale/testimonial14.webp",
+    
+    "/testimoniale/testimonial2.webp",
+    "/testimoniale/testimonial5.webp",
+    "/images/rezultat2.webp",
+    "/testimoniale/testimonial8.webp",
+    
+    "/testimoniale/testimonial13.webp",
+    "/testimoniale/testimonial4.webp",
+    "/testimoniale/recenzie1.webp",
+    "/images/rezultat.webp",
+    
+    "/testimoniale/testimonial6.webp",
+    "/testimoniale/testimonial3.webp",
+    "/testimoniale/testimonial11.webp",
+    "/images/rezultat3.webp",
+    
+    "/testimoniale/testimonial7.webp",
+    "/images/rezultat4.webp",
+    "/testimoniale/testimonial14.webp",
+    "/testimoniale/testimonial2.webp"
+];
 
 
     return(
@@ -70,10 +54,9 @@ const images = [
             
 
             <div className={styles.heroSection}>
-                <h1>Coaching de <span>performanță</span> pentru corp și minte</h1>
-                <p>Coaching personalizat 1-1 pentru performanță, disciplină și echilibru.
-                </p>
-                <Link className={styles.cta} href="mihaistate-abonare.ro">Începe transformarea</Link>
+                <h1>Cel mai bun moment pentru a incepe sa devii mai <span>sanatos</span>, mai <span>puternic</span> si mai bun a fost ieri<br/> Al doilea este astazi <br/>  Cei care esueaza asteapta ziua de maine.</h1>
+                <p></p>
+                <Link className={styles.cta} href="#pachete">Începe transformarea</Link>
             </div>
 
             <div className={styles.overlay} />

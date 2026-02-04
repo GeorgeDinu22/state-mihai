@@ -1,0 +1,87 @@
+.bodyMultumesc{
+    width: 90%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: auto;
+    padding: 24px 0;
+}
+.bodyMultumesc h1{
+    color: var(--mainColor);
+    font-size: 28px;
+    font-weight: 750;
+    text-align: center;
+}
+.bodyMultumesc p{
+    color: white;
+    font-weight: 550;
+    text-align: center;
+}
+.bodyMultumesc .containerVideo{
+    width: 100%;
+    border-radius: 12px;
+    height: 550px;
+    max-width: 500px;
+    position: relative;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.bodyMultumesc .containerVideo::before{
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: rgba(0, 0, 0, 0);
+    height: 50px;
+    width: 50px;
+    z-index: 2;
+    border-top: 3.5px solid var(--mainColor);
+    border-right: 3.5px solid var(--mainColor);
+    border-top-right-radius: 12px;
+}
+.bodyMultumesc .containerVideo::after{
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: -10px;
+    background-color: rgba(0, 0, 0, 0);
+    height: 50px;
+    width: 50px;
+    z-index: 2;
+    border-bottom: 3.5px solid var(--mainColor);
+    border-left: 3.5px solid var(--mainColor);
+    border-bottom-left-radius: 12px;
+}
+.bodyMultumesc .containerVideo video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.overlayVideo{
+    position: absolute;
+    top:0px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    visibility: visible;
+    transition: all 250ms ease-in-out;
+}
+.overlayVideo .buttonPlay{
+    padding: 12px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.75);
+}

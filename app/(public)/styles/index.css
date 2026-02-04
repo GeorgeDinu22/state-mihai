@@ -1,0 +1,93 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+.legalPage {
+  max-width: 900px;
+  margin: 0 auto;
+  color: #e5e5e5;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+/* Titlul principal */
+.legalPage h1 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  margin-top: 0px;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Data actualizării */
+.legalPage > p {
+  text-align: center;
+  font-size: 14px;
+  color: #bdbdbd;
+  margin-bottom: 40px;
+}
+
+/* Secțiuni */
+.legalPage section {
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Titluri secțiuni */
+.legalPage h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--mainColor);
+}
+
+/* Paragrafe */
+.legalPage p {
+  margin-bottom: 12px;
+  color: #dcdcdc;
+}
+
+/* Liste */
+.legalPage ul {
+  margin-left: 20px;
+  margin-bottom: 16px;
+}
+
+.legalPage li {
+  margin-bottom: 8px;
+  color: #d0d0d0;
+}
+
+/* Link-uri */
+.legalPage a {
+  color: var(--mainColor);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.legalPage a:hover {
+  text-decoration: underline;
+}
+
+/* Strong text */
+.legalPage strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Responsivitate */
+@media (max-width: 600px) {
+  .legalPage h1 {
+    font-size: 28px;
+  }
+
+  .legalPage h2 {
+    font-size: 20px;
+  }
+
+  .legalPage {
+    padding: 30px 16px 0px;
+  }
+}

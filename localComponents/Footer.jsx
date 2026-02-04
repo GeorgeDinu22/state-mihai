@@ -1,31 +1,38 @@
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { faTiktok } from "@fortawesome/free-brands-svg-icons";
+import { Instagram } from 'lucide-react'
 
 export default function Footer() {
   return (
     <footer id="contact">
       <div className="containerFooter">
-        <h4 className="titluFooter">Mihai State</h4>
+        <Link className="titluFooter" href="/">Mihai State</Link>
 
         <div className="containerSocial">
-          <Link
+          <Link className="cardSocial"
             id="tiktok"
             href="https://www.tiktok.com/@state.mihai33?_t=ZN-8yFNoqJ0FHC&_r=1"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FontAwesomeIcon className="icon" icon={faTiktok} />
+        <svg 
+          viewBox="0 0 32 32" 
+          xmlns="http://www.w3.org/2000/svg" 
+          width="24" 
+          height="24" 
+          fill="#000000"
+        >
+          <title>tiktok</title>
+          <path d="M16.656 1.029c1.637-0.025 3.262-0.012 4.886-0.025 0.054 2.031 0.878 3.859 2.189 5.213l-0.002-0.002c1.411 1.271 3.247 2.095 5.271 2.235l0.028 0.002v5.036c-1.912-0.048-3.71-0.489-5.331-1.247l0.082 0.034c-0.784-0.377-1.447-0.764-2.077-1.196l0.052 0.034c-0.012 3.649 0.012 7.298-0.025 10.934-0.103 1.853-0.719 3.543-1.707 4.954l0.020-0.031c-1.652 2.366-4.328 3.919-7.371 4.011l-0.014 0c-0.123 0.006-0.268 0.009-0.414 0.009-1.73 0-3.347-0.482-4.725-1.319l0.040 0.023c-2.508-1.509-4.238-4.091-4.558-7.094l-0.004-0.041c-0.025-0.625-0.037-1.25-0.012-1.862 0.49-4.779 4.494-8.476 9.361-8.476 0.547 0 1.083 0.047 1.604 0.136l-0.056-0.008c0.025 1.849-0.050 3.699-0.050 5.548-0.423-0.153-0.911-0.242-1.42-0.242-1.868 0-3.457 1.194-4.045 2.861l-0.009 0.030c-0.133 0.427-0.21 0.918-0.21 1.426 0 0.206 0.013 0.41 0.037 0.61l-0.002-0.024c0.332 2.046 2.086 3.59 4.201 3.59 0.061 0 0.121-0.001 0.181-0.004l-0.009 0c1.463-0.044 2.733-0.831 3.451-1.994l0.010-0.018c0.267-0.372 0.45-0.822 0.511-1.311l0.001-0.014c0.125-2.237 0.075-4.461 0.087-6.698 0.012-5.036-0.012-10.060 0.025-15.083z"></path>
+        </svg>
           </Link>
 
-          <Link
+          <Link className="cardSocial"
             id="instagram"
             href="https://www.instagram.com/state.mihai/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FontAwesomeIcon className="icon" icon={faInstagram} />
+            <Instagram strokeWidth={3}/>
           </Link>
         </div>
       </div>
@@ -38,25 +45,44 @@ export default function Footer() {
          <Link className="linkLegal" href="/termeni-si-conditii/">
          Termeni și condiții
         </Link>
+         <Link className="linkLegal" href="/politica-retur/">
+         Politica de Retur
+        </Link>
       </div>
 
        <div className="footerInfo">
          <h5>Date contact</h5>
-          <p>Mihai State PFA</p>
+          <p>S.C. NEW SPORT GENERATION S.R.L</p>
           <p>
-            CUI: 12345678<br />
-            Sediu: București, România
+            CUI: 36650195<br />
+            București
           </p>
           <p>
             E-mail:{" "}
-            <a href="mailto:contact@mihaistate.ro">contact@mihaistate.ro</a>
+            <a href="mailto:contact@mihaistate.ro">contact@statemihai.ro</a>
             <br />
-            Tel: 07xx xxx xxx
+            <a href="tel:+40746113737">Tel: +40 746 113 737</a>
           </p>
         </div>
 
+        <div className="footerBanners">
+          <Link href="https://anpc.ro/ce-este-sal/">
+            <img loading="lazy" src="./footerImages/anpc.png"/>
+          </Link>
+          <Link href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=RO">
+            <img loading="lazy" src="./footerImages/solutionareaLitigiilor.png"/>
+          </Link>
+        </div>
+
+        <div className="footerPayMethods">
+            <img className="footerPaymentMethodsImg" src="./footerImages/visa.webp/"/>
+            <img className="footerPaymentMethodsImg" src="./footerImages/mastercard.png"/>
+            <img className="footerPaymentMethodsImg" src="./footerImages/applePay.png"/>
+            <img className="footerPaymentMethodsImg" src="./footerImages/googlePay.png"/>
+        </div>
+
       <div className="autor">
-        © Mihai State | Toate Drepturile Rezervate – Created by Dinu George
+        ©State Mihai | Toate Drepturile Rezervate - Created by Dinu George
       </div>
     </footer>
   );

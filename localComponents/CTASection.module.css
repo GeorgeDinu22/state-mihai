@@ -8,92 +8,94 @@
   transform: translateY(125px);
   opacity: 0;
   transition: all 750ms ease-in-out;
+  --card-width: 250px;
+  --card-gap: 16px;
+  --image-count: 7; 
+  margin-top: 40px;
+  --scroll-width: calc((var(--card-width) + var(--card-gap)) * var(--image-count));
 }
+
 .wrapper.show{
     transform: translateY(0);
     opacity: 1;
 }
 
 .title {
-  font-size: 24px;
+  font-size: clamp(24px,3vw,32px);
   font-weight: 750;
   color: white;
 }
+.title span{
+  color: var(--mainColor);
+}
 
-
-/* Scroller */
-.scroller{
+.scroller {
   overflow: hidden;
   width: 100%;
   position: relative;
-}
-.scroller::before,
-.scroller::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 80px;      /* cât de mare să fie fade-ul */
-  height: 100%;
-  z-index: 5;
-  pointer-events: none; /* important – să nu blocheze scrollul vizual */
-}
-
-/* Fade stânga */
-.scroller::before {
-  left: 0;
-  background: linear-gradient(
-    to right,
-    #000000 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
-}
-
-/* Fade dreapta */
-.scroller::after {
-  right: 0;
-  background: linear-gradient(
-    to left,
-    #000000 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
 .track {
   display: flex;
-  animation: scrollLeft 28s linear infinite;
-  gap: 16px;
+  gap: var(--card-gap);
   margin-top: 24px;
+  width: max-content; 
+  animation: scrollLeft 36s linear infinite;
+}
+
+.scroller:hover .track {
+  animation-play-state: paused;
 }
 
 .reverse {
-  animation: scrollRight 28s linear infinite;
+  animation-name: scrollRight;
 }
 
-.imageWrapper{
+.imageWrapper {
   position: relative;
-  width: 200px;
-  height: 350px;
+  width: var(--card-width);
+  height: 450px;
   flex-shrink: 0;
   border-radius: 20px;
   overflow: hidden;
-  border: 2px solid var(--borderColor);
+  border: 2px solid #333; 
   background: #0d0d0d;
   transition: border 250ms ease;
 }
-.imageWrapper img{
-    object-fit: cover;
+
+.imageWrapper:hover {
+    border: 2px solid #3b82f6; 
 }
-.imageWrapper:hover{
-    border: 2px solid var(--mainColor);
+.sliderImg{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 
+
 @keyframes scrollLeft {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-200px * 4 - 16px * 4)); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-1 * var(--scroll-width)));
+  }
 }
 
 @keyframes scrollRight {
-   0% {transform: translateX(calc(-200px * 4 - 16px * 4)); }
-  100% {  transform: translateX(0); }
+  0% {
+    transform: translateX(calc(-1 * var(--scroll-width)));
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
+@media(min-width:750px){
+  .wrapper{
+      --card-width: 325px;
+        margin-top: 80px;
+  }
+}

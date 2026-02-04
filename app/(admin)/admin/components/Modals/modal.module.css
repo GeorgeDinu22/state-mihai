@@ -1,0 +1,524 @@
+
+
+.container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    padding: 12px;
+    border-radius: 12px;
+    overflow-y: auto;
+}
+.container::-webkit-scrollbar {
+  width: 10px;          
+}
+.container::-webkit-scrollbar-track {
+  background:grey;  
+  margin-left: 12px;        
+  border-radius: 3px;
+}
+.container::-webkit-scrollbar-thumb {
+  background: var(--mainColor);  
+  border-radius: 10px;
+}
+.container form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    justify-content: center;
+    align-items: end;
+    overflow-y: scroll;
+    max-height: 90vh;
+    padding: 12px 12px;
+    padding-right:16px;
+}
+.container form::-webkit-scrollbar {
+  width: 5px;          
+}
+.container form::-webkit-scrollbar-track {
+  background: var(--borderColor);  
+  margin-left: 12px;        
+  border-radius: 3px;
+}
+.container form::-webkit-scrollbar-thumb {
+  background: grey;  
+  border-radius: 10px;
+}
+
+
+.container h4{
+    grid-column: 1/3;
+    font-size: 24px;
+}
+.container .formWrapper{
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+.wrapperBanner{
+  display: flex;
+}
+.checkBox{
+  margin: 0 !important;
+}
+.wrapperBanner input[type="text"]{
+  width:300%;
+}
+.textInactiv{
+    grid-column: 2/3;
+}
+.toggleActivState{
+    grid-column: 1/2 !important;
+}
+.container .formWrapper:has(div){
+    grid-column: 1/3;
+    gap: 4px;
+}
+
+.textButtonCTA{
+    grid-column: 1/3;
+}
+#inputCheck{
+    width: 36px;
+}
+.wrapperTextArea{
+    grid-column: 1/3;
+}
+.container .formWrapper label{
+    font-size: 20px;
+    font-weight: 600;
+}
+.container .formWrapper label span{
+    font-size: 16px;
+    color: #f56565;
+}
+.lucidReact{
+    color: #f56565;
+    text-decoration: none;
+}
+
+.container form input,
+.container form textarea{
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    background-color: var(--borderColor);
+    color: white;
+    width: 100%;
+    font-size: 18px;
+}
+.container input[type="color"] {
+  padding: 2px;
+  height: 34px;
+  cursor: pointer;
+}
+.container input[type="color"]:focus{
+    outline: none;
+}
+.container form input:focus,
+.container form textarea:focus{
+    outline: 2px solid var(--mainColor);
+}
+form input[type="checkbox"]:focus{
+    outline: none;
+}
+.bottomModal{
+    grid-column: 1/3;
+    width: 100%;
+    display: flex;
+    gap: 8px;
+}
+.btnSubmit{
+    grid-column: 1/3;
+    width: 100%;
+    padding: 6px;
+    border-radius: 6px;
+    background-color: #003994; 
+    color: #e5f0ff;  
+    font-weight: 750;
+    border: none;
+    font-size: 20px;
+    margin-top: 8px;
+    cursor: pointer;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.deleteBtn{
+    background-color: #850009; 
+    color: #fee2e2; 
+    grid-column: 1/3;
+    width: 100%;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    border-radius: 6px;
+    font-weight: 750;
+    border: none;
+    font-size: 20px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.confirmOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.confirmModal {
+  background: var(--CardColor);
+  border: 1px solid var(--borderColor);
+  padding: 20px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+}
+
+.confirmModal h4 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.confirmModal p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+.confirmActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btnCancel {
+  flex: 1;
+  background: #333;
+  border: none;
+  border-radius: 6px;
+  padding: 6px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btnDelete {
+  flex: 1;
+  background: #c62828;
+  border: none;
+  border-radius: 6px;
+  padding: 6px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+
+/* Design pentru Dummy Card  */
+
+.card{
+  width:100%;
+  border-radius: 12px;
+  max-width: 390px;
+  min-width: 390px;
+  background-color: var(--CardColor);
+  display: flex; 
+  flex-direction: column;
+  position: relative;
+  transition: all 250ms ease;
+  cursor: pointer;
+  margin-left: 12px;
+}
+.contentWrapper{
+  padding: 12px;
+  display: flex; 
+  flex-direction: column;
+ overflow: hidden;
+  gap: 0px;
+  border-radius: 12px;
+  padding-bottom: 20px;
+  position: relative;
+  transition: all 250ms ease;
+  height: 100%;
+  z-index: 90;
+  overflow-y: auto;
+}
+.contentWrapper::-webkit-scrollbar {
+  width: 6px;          
+}
+
+.contentWrapper::-webkit-scrollbar-track {
+  background: var(--borderColor);  
+  margin-left: 12px;        
+  border-radius: 3px;
+}
+
+.contentWrapper::-webkit-scrollbar-thumb {
+  background: grey;  
+  border-radius: 10px;
+}
+.contentWrapper
+.pachetInactiv{
+    filter: grayscale(2) blur(1px);
+}
+.card:hover{
+    box-shadow: 0 0 15px var(--glow-color);
+    border: none;
+}
+.iconCard{
+    width: max-content;
+    position: relative;
+    z-index: 2;
+    border-radius: 6px;
+    padding: 6px;
+    background-color: var(--CardColor);
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    margin-bottom: 12px;
+}
+
+/* Border colorat */
+.contentWrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px; 
+  background: linear-gradient(
+      140deg,
+      var(--glow-color, rgba(0,255,140,0.5)),
+      transparent 60%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Glow colțuri */
+.contentWrapper::after {
+  content: "";
+  position: absolute;
+  inset: -40px;
+  background:
+    radial-gradient(40% 40% at top left,
+      var(--glow-color, rgba(0,255,140,0.4)), transparent),
+    radial-gradient(40% 40% at bottom right,
+      var(--glow-color, rgba(0,255,140,0.4)), transparent);
+  filter: blur(45px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+.card .bestValue{
+  --f: .5em; /* control the folded part */
+  color: black;
+  font-weight: 550;
+  position: absolute;
+  top: 0;
+  right: 0;
+  line-height: 1.8;
+  padding-inline: 1lh;
+  padding-bottom: var(--f);
+  border-image: conic-gradient(#0008 0 0) 51%/var(--f);
+  clip-path: polygon(
+    100% calc(100% - var(--f)),100% 100%,calc(100% - var(--f)) calc(100% - var(--f)),var(--f) calc(100% - var(--f)), 0 100%,0 calc(100% - var(--f)),999px calc(100% - var(--f) - 999px),calc(100% - 999px) calc(100% - var(--f) - 999px));
+  transform: translate(calc((1 - cos(45deg))*100%), -100%) rotate(45deg);
+  transform-origin: 0% 100%;
+background: linear-gradient(45deg, #ffd633, #ff9900);
+  z-index: 99;
+}
+.card .titlu{
+    font-weight: 650;
+    color: white;
+    font-size: 24px;
+    text-align: left;
+    z-index: 9;
+}
+.card .pret{
+    font-size: 28px;
+    font-weight: 750;
+    color: white;
+    z-index: 2;
+}
+.card .durata{
+    font-size: 20px;
+    font-weight:600;
+    color: white;
+    z-index: 2;
+}
+.card .includes{
+    width: 100%;
+    color: white;
+    font-weight: 550;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+    margin-top: 12px;
+}
+.card .includes .includedTitle{
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    position: relative;
+}
+.card .includes .includedTitle::before{
+    content: "";
+    width: 35%;
+    height: 2px;
+    position: absolute;
+    background-color: grey;
+    top: 50%;
+    left: 0%;
+    transition: translateY(-50%);
+}
+.card .includes .includedTitle::after{
+    content: "";
+    width: 35%;
+    height: 2px;
+    position: absolute;
+    background-color: grey;
+    top: 50%;
+    right: 0%;
+    transition: translateY(-50%);
+}
+.card .includes li{
+    position: relative;
+    font-size: 16px;
+    list-style-type: none;
+}
+
+
+.card .excludes{
+    width: 100%;
+    color: white;
+    font-weight: 550;
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+}
+.card .excludes .excludedTitle{
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    position: relative;
+    display: none;
+}
+.card .excludes .excludedTitle::before{
+    content: "";
+    width: 35%;
+    height: 2px;
+    position: absolute;
+    background-color: grey;
+    top: 50%;
+    left: 0%;
+    transition: translateY(-50%);
+}
+.card .excludes .excludedTitle::after{
+    content: "";
+    width: 35%;
+    height: 2px;
+    position: absolute;
+    background-color: grey;
+    top: 50%;
+    right: 0%;
+    transition: translateY(-50%);
+}
+
+.card .excludes li{
+    color: rgb(255, 255, 255);
+    opacity: 0.7;
+    position: relative;
+    font-size: 16px;
+    list-style-type: none;
+}
+
+.card .cta{
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 6px;
+    background-color: white;
+    color: black;
+    font-weight: 650;
+    text-align: center;
+    padding: 12px;
+    font-size: 18x;
+    position: relative;
+    z-index: 2;
+    margin-top: auto;
+    text-decoration: none;
+}
+
+.togglePachetActiv{
+    border-radius: 6px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 18px;
+    cursor: pointer;
+    width: 100%;
+}
+.activ{
+    background-color: rgb(0, 120, 0);
+}   
+.dezactivat{
+    background-color: grey;
+}
+.backgroundInactiv{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.backgroundInactiv p{
+    color: white;
+    font-weight: 650;
+    font-size: 32px;
+    text-align: center;
+    z-index: 2;
+}
+
+
+@media(max-width:649px){
+  .container{
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .container form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    overflow-y: scroll;
+    max-height: 90vh;
+    min-height: 90vh;
+    padding: 12px 12px;
+    padding-right:16px;
+}
+}

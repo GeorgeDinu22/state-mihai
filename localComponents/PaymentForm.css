@@ -1,0 +1,191 @@
+.paymentForm{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.paymentDivider {
+  color: white;
+  font-weight: 750;
+  font-size: 24px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.paymentDivider::before,
+.paymentDivider::after {
+  content: "";
+  flex: 1; 
+  height: 1px; 
+  background-color: var(--borderColor); 
+}
+
+.disclaimer{
+  background-color: var(--CardColor);
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1.25px solid var(--borderColor);
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0px 0;
+  text-align: center;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 8px;
+}
+.containerDisclaimer{
+  text-align: center;
+  display: flex;
+  align-items: flex-start;
+}
+.checkBox {
+  appearance: none;
+  -webkit-appearance: none;
+  margin-right: 6px;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background: var(--CardColor);
+  border: 2px solid var(--borderColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 2px;
+}
+
+.checkBox:hover {
+  border-color: var(--mainColor);
+}
+
+.checkBox:checked {
+  background: var(--mainColor);
+  border-color: var(--mainColor);
+}
+
+.checkBox:checked::after {
+  content: "";
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0; 
+  transform: rotate(45deg); 
+  margin-bottom: 2px; 
+}
+.checkBox:checked {
+  animation: checkPop 0.2s ease-in-out;
+}
+
+@keyframes checkPop {
+  0% { transform: scale(0.9); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+.disclaimer .link{
+  padding: 1px;
+  color: white;
+}
+.label{
+  text-align: left;
+}
+.error {
+  color: #ff4d4f;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.containerButtons{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin-top: 32px;
+}
+
+.stripeError{
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 0;
+  background: rgba(180, 0, 0, 0.2);
+  border: 1px solid #ff4d4f;
+}
+.stripeError p{
+  font-weight: 600;
+  color: #ff4d4f;
+  font-size: 17px;
+  text-align: center;
+}
+
+
+.payBtn{
+  background-color: var(--mainColor);
+  width: 100%;
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+  padding: 12px;
+  font-size: clamp(17px,2vw,20px);
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  transition: transform 250ms ease;
+  border: none;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.backBtn{
+  background-color:rgba(0, 157, 255, 0.25);
+  border: 1px solid var(--mainColor);
+  width: 100%;
+  border-radius: 12px;
+  color: rgb(255, 255, 255);
+  padding: 12px;
+  font-size: 20px;
+  font-weight: 750;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  transition: transform 250ms ease;
+  border: none;
+  height: 50px;
+  gap: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 5px dotted #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

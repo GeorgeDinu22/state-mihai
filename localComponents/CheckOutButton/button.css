@@ -1,0 +1,48 @@
+button{
+  background-color:white;
+  width: 96%;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: clamp(20px,2vw,24px);
+  font-weight: 750;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  transition: transform 250ms ease;
+  border: none;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  margin:12px 0;
+  max-width: 800px;
+}
+button:hover{
+  transform: translateY(-6px);
+}
+button.pressed{
+    background-color: rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 5px dotted #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 

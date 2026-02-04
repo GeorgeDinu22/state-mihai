@@ -34,35 +34,35 @@ export default function Proces(){
 
 const Pasi = [
   {
-    titlu: "Completezi profilul și obiectivele",
+    titlu: "Îți creezi contul în câteva secunde",
     descriere:
-      "La înscriere îți setezi obiectivele, istoricul tău, preferințele alimentare și nivelul actual. Astfel pot crea un plan care să se potrivească perfect stilului tău de viață.",
-    imagine: "/logo.png",
+      "După achiziționare primești acces în aplicația mea. Îți setezi parola, iar contul este gata, totul simplu, rapid și 100% online.",
+    imagine: "/proces/logare.webp",
   },
   {
-    titlu: "Primești planul personalizat în aplicație",
+    titlu: "Primești mesajul de bun venit",
     descriere:
-      "După analiza datelor tale, îți trimit direct în Sportify programul de antrenament și planul alimentar, adaptate în funcție de obiective și disponibilitate.",
-    imagine: "/logo.png",
+      "Te întâmpin direct în aplicație și îți explic pașii următori. Programul tău este pregătit, iar eu sunt mereu la un mesaj distanță pentru orice întrebare.",
+    imagine: "/proces/welcome.webp",
   },
   {
-    titlu: "Urmărești antrenamentele ghidate",
+    titlu: "Loghezi mesele și primești feedback",
     descriere:
-      "Fiecare exercițiu vine cu video, explicații clare și număr de repetări. Totul este urmărit automat în aplicație, astfel încât progresul tău este vizibil zi de zi.",
-    imagine: "/logo.png",
+      "Încarci rapid poze cu mesele tale, iar eu pot urmări și ajusta alimentația în funcție de obiectivele tale.",
+    imagine: "/proces/dieta.webp",
   },
   {
-    titlu: "Trimite-mi feedback și check-in-uri săptămânale",
+    titlu: "Urmezi antrenamentele tale personalizate",
     descriere:
-      "Îmi trimiți progresul, poze, măsurători și cum te simți. Analizez tot și ajustez planul pentru a te menține motivat și pe direcția corectă.",
-    imagine: "/logo.png",
+      "Ai acces la planul tău de antrenament, structurat pe zile, cu exerciții video clare și progres adaptat constant nivelului tău.",
+    imagine: "/proces/antrenamente.webp",
   },
-  {
-    titlu: "Ajustăm programul continuu",
+    {
+    titlu: "Îți urmărești progresul zilnic",
     descriere:
-      "Pe baza evoluției tale, actualizez antrenamentele, caloriile și exercițiile, astfel încât să ai mereu un program eficient și adaptat nevoilor tale.",
-    imagine: "/logo.png",
-  },
+      "Pași, somn, greutate, poze cu progresul tău, totul va fi într-un singur loc. Ai o imagine clară asupra evoluției tale, zi de zi.",
+    imagine: "/proces/progres.webp",
+  }
 ];
 
     return(
@@ -87,7 +87,8 @@ const Pasi = [
                         </p>
                         <div className={styles.containerImage}>
                             <Image
-                            fill
+                            width={450}
+                            height={150}
                             src={pas.imagine}
                             alt={pas.titlu}/>
                         </div>

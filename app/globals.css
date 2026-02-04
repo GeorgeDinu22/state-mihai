@@ -15,6 +15,7 @@ body{
   background-color: rgb(0, 0, 0);
 }
 
+
 header{
   background-color: rgb(0, 0, 0);
   display: flex;
@@ -30,19 +31,36 @@ header{
   z-index: 9999999;
   color: white;
   height: 60px;
-  transition: transform 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
-header.invisible{
-    transform: translate(-50%,-200%);
+header.headerHidden{
+    opacity: 0;
+    transform: translate(-50%, -100%);
 }
-
 
 header .logo{
   font-weight: 750 !important;
   width: max-content;
   padding: 4px;
-  font-size: 18px;
+  font-size: clamp(18px,2vw,22px);
   font-family: var(--font-open-sans);
+}
+
+
+.headerCta{
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 750;
+  font-size: 24px;
+  background: var(--gradientColor);
+  transition: transform 250ms ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 4px;
+}
+.headerCta:hover{
+  transform: scale(1.001) translateY(-4px);
 }
 
 .box {
@@ -102,18 +120,62 @@ header .logo{
 }
 .linkHeader{
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 650;
   padding: 4px;
   width: 50%;
   text-align: center;
+  transition: all 250ms ease-in-out;
+}
+.linkHeader:hover{
+  color: var(--mainColor);
+  font-weight: 700;
+}
+
+.orizontalNavigation{
+  width:max-content;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.linkHeaderHor{
+  font-size: clamp(20px,2vw,22px);
+  font-weight: 650;
+  padding: 4px;
+  width: 50%;
+  text-align: center;
+  width: max-content;
+  transition: all 250ms ease-in-out;
+}
+.linkHeaderHor:hover{
+  color: var(--mainColor);
+  font-weight: 700;
+}
+@media(min-width:980px){
+    .dropwDown{
+      display: none;
+    }
+    .box{
+      display: none;
+    }
+    header{
+      height: 68px;
+    }
+}
+@media(max-width:979px){
+    .orizontalNavigation{
+      display: none;
+    }
+    .headerCta{
+      display: none;
+    }
 }
 
 
 :root {
   --mainColor: #009dff; 
 
-    --CardColor: rgb(26, 26, 26);
-    --borderColor:rgb(51, 51, 51);
+  --CardColor: rgb(26, 26, 26);
+  --borderColor:rgb(51, 51, 51);
 
   --mainColorDark: rgba(10, 160, 180, 1);
 
@@ -295,7 +357,7 @@ footer{
     -webkit-text-fill-color: transparent;
     background-clip: text;   
     font-weight: 750;
-    font-size: 24px;
+    font-size: clamp(24px,2vw,32px);
     margin-left: 10px;
 }
 
@@ -308,8 +370,8 @@ footer .containerSocial{
 }
 footer .containerSocial a{
     text-decoration: none;
-    background-color: var(--CardColor);
-    padding: 8px;
+    background-color: var(--mainColor);
+    padding: 6px;
     border-radius: 5px;
 }
 
@@ -326,7 +388,7 @@ h5{
   color: white;
   font-weight: 650;
   margin-bottom: 4px;
-  font-size: 20px;
+  font-size: clamp(18px,2vw,22px);
 }
 .linkLegal{
   color: white;
@@ -334,6 +396,7 @@ h5{
   padding-left: 0px;
   text-decoration: underline;
   margin-left: 4px;
+  font-size: clamp(14px,1.5vw,18px);
 }
 .icon{
   color: var(--mainColor);
@@ -349,6 +412,37 @@ h5{
 }
 .footerInfo p{
   margin-left: 4px;
+  font-size: clamp(14px,1.5vw,18px);
+}
+
+.footerBanners{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: start;
+  margin-top: 16px;
+}
+.footerBanners img{
+  width: 200px;
+  margin-left: 12px;
+  border-radius: 6px;
+  background-color: white;
+}
+
+.footerPayMethods{
+   width: 100%;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+}
+.footerPayMethods .footerPaymentMethodsImg{
+  height: 32px;
+  background-color: white;
+  border-radius: 6px;
+  padding: 4px;
 }
 
 footer .autor {
@@ -365,6 +459,9 @@ footer .autor {
 }
 
 @media(min-width:750px){
+  .containerFooter .titluFooter{
+    margin-left: 16px;
+  }
     .containerFooter h6{
         font-size: 20px;
         margin-left: 10px;
@@ -374,11 +471,10 @@ footer .autor {
         gap: 14px;
         align-items: center;
         justify-content: center;
-        margin-right: 12px;
+        margin-right: 16px;
     }
     footer .containerSocial a{
         text-decoration: none;
-        background-color: var(--mainColor);
         padding: 9px;
         border-radius: 6px;
     }
@@ -386,4 +482,37 @@ footer .autor {
         color:white;
         font-size: 26px;
     }
+    .containerLegalFooter{
+        margin-left: 32px;
+    }
+    .footerInfo{
+      margin-left: 32px;
+    }
+
+  .footerBanners{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+  }
+  .footerBanners img{
+    width: 275px;
+    margin-left: 12px;
+    border-radius: 10px;
+  }
+
+  .footerPayMethods{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 12px;
+  }
+  .footerPayMethods .footerPaymentMethodsImg{
+      height: 52px;
+  }
 }
