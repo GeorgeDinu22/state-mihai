@@ -54,8 +54,13 @@ const images = [
             
 
             <div className={styles.heroSection}>
-                <h1>Cel mai bun moment pentru a incepe sa devii mai <span>sanatos</span>, mai <span>puternic</span> si mai bun a fost ieri<br/> Al doilea este astazi <br/>  Cei care esueaza asteapta ziua de maine.</h1>
-                <p></p>
+                <h1>
+                    Cel mai bun moment pentru a începe să devii mai <span>sănătos</span>, mai <span>puternic</span> și mai bun a fost ieri.
+                    <br />
+                    Al doilea este astăzi.
+                    <br />
+                    Cei care eșuează așteaptă ziua de mâine
+                </h1>
                 <Link className={styles.cta} href="#pachete">Începe transformarea</Link>
             </div>
 
