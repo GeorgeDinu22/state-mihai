@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fugaz_One, Open_Sans } from 'next/font/google';
+import { Open_Sans } from 'next/font/google';
 
 import "../globals.css";
 
@@ -7,15 +7,6 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 
-import Header from "../../localComponents/Header";
-import Footer from "../../localComponents/Footer";
-
-const fugaz = Fugaz_One({
-  weight: '400',
-  subsets: ['latin'],
-  display: 'swap',
-  variable: "--font-fugaz",
-});
 
 const openSans = Open_Sans({
   weight: ['400', '600', '700', '800'],
@@ -25,7 +16,7 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mihai-state.vercel.app"),
+  metadataBase: new URL("https://statemihai.ro"),
 
   title: "Mihai State – Antrenor Personal",
   description: "Transformă-ți corpul și mintea prin coaching personalizat.",
@@ -34,16 +25,17 @@ icons: {
   icon: "/favicon.ico",
 },
 
-  openGraph: {
+openGraph: {
     type: "website",
     title: "Mihai State – Antrenor Personal",
     description: "Transformă-ți corpul și mintea prin coaching personalizat.",
     siteName: "Mihai State",
     images: [
       {
-        url: "/profile.jpg", 
+        url: "https://statemihai.ro/profile.jpg", 
         width: 1080,
         height: 1080,
+        alt: "Mihai State - Antrenor Personal",
       },
     ],
   },
@@ -52,7 +44,7 @@ icons: {
     card: "summary_large_image",
     title: "Mihai State – Antrenor Personal",
     description: "Transformă-ți corpul și mintea prin coaching personalizat.",
-    images: ["/profile.jpg"],
+    images: ["https://statemihai.ro/profile.jpg"], 
   },
 };
 
@@ -65,7 +57,7 @@ export default function RootLayout({
   return (
     <html lang="ro">
       <body
-        className={`${fugaz.variable} ${openSans.variable} antialiased`}
+        className={`${openSans.variable} antialiased`}
       >
         {children}
       </body>
