@@ -19,7 +19,7 @@ export default function TermeniSiConditii() {
         <p>
           Prestator (Operator economic): <strong>S.C. NEW SPORT GENERATION S.R.L</strong>, 
           CUI/CIF: <strong>36650195</strong>, 
-          sediul social: <strong>Curtea de Argeș, Strada Plopiși 37, 115300</strong>, 
+          sediul social: <strong>București</strong>, 
           e-mail: <a href="mailto:contact@statemihai.ro">contact@statemihai.ro</a>, 
           telefon: <strong>+40 746 113 737</strong>.
           <br />

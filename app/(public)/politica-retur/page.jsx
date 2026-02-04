@@ -31,7 +31,7 @@ export default function PoliticaBaniInapoi() {
           <br />
           CUI/CIF: <strong>36650195</strong>
           <br />
-          Sediu: <strong>Curtea de Argeș, Strada Plopiși 37, 115300</strong>
+          Sediu: <strong>București</strong>
           <br />
           E-mail:{" "}
           <a href="mailto:contact@statemihai.ro">contact@statemihai.ro</a>
