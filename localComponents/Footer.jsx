@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Instagram } from 'lucide-react'
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -10,6 +11,7 @@ export default function Footer() {
         <div className="containerSocial">
           <Link className="cardSocial"
             id="tiktok"
+            aria-label="Profil TikTok State Mihai"
             href="https://www.tiktok.com/@state.mihai33?_t=ZN-8yFNoqJ0FHC&_r=1"
             target="_blank"
             rel="noopener noreferrer"
@@ -31,8 +33,9 @@ export default function Footer() {
             href="https://www.instagram.com/state.mihai/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Profil Instagram State Mihai"
           >
-            <Instagram strokeWidth={3}/>
+            <Instagram  strokeWidth={3}/>
           </Link>
         </div>
       </div>
@@ -57,28 +60,48 @@ export default function Footer() {
             CUI: 36650195<br />
             București
           </p>
-          <p>
-            E-mail:{" "}
-            <a href="mailto:contact@mihaistate.ro">contact@statemihai.ro</a>
-            <br />
-            <a href="tel:+40746113737">Tel: +40 746 113 737</a>
-          </p>
+          <a href="mailto:contact@mihaistate.ro">
+            E-mail: contact@statemihai.ro
+          </a>
+          <a href="tel:+40746113737">
+            Tel: +40 746 113 737
+          </a>
         </div>
 
         <div className="footerBanners">
-          <Link href="https://anpc.ro/ce-este-sal/">
-            <img loading="lazy" src="./footerImages/anpc.png"/>
+          <Link aria-label="Ce este SAL?" href="https://anpc.ro/ce-este-sal/">
+            <Image src="/footerImages/anpc.png" width={550} height={550} alt=""/>
           </Link>
-          <Link href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=RO">
-            <img loading="lazy" src="./footerImages/solutionareaLitigiilor.png"/>
+          <Link aria-label="Solutionarea Litigiilor Online" href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=RO">
+            <Image  src="/footerImages/solutionareaLitigiilor.png" width={550} height={550} alt=""/>
           </Link>
         </div>
 
         <div className="footerPayMethods">
-            <img className="footerPaymentMethodsImg" src="./footerImages/visa.webp/"/>
-            <img className="footerPaymentMethodsImg" src="./footerImages/mastercard.png"/>
-            <img className="footerPaymentMethodsImg" src="./footerImages/applePay.png"/>
-            <img className="footerPaymentMethodsImg" src="./footerImages/googlePay.png"/>
+            <Image
+             className="footerPaymentMethodsImg" 
+             src="/footerImages/visa.webp"
+             width={400}
+             height={400}
+             alt=""/>
+            <Image
+             className="footerPaymentMethodsImg" 
+             src="/footerImages/mastercard.png"
+             width={400}
+             height={400}
+             alt=""/>
+            <Image
+             className="footerPaymentMethodsImg"
+              src="/footerImages/applePay.png"
+              width={400}
+             height={400}
+             alt=""/>
+            <Image
+             className="footerPaymentMethodsImg" 
+             src="/footerImages/googlePay.png"
+             width={400}
+             height={400}
+             alt=""/>
         </div>
 
       <div className="autor">

@@ -412,6 +412,12 @@ h5{
 }
 .footerInfo p{
   margin-left: 4px;
+  padding: 1px;
+  font-size: clamp(14px,1.5vw,18px);
+}
+.footerInfo a{
+  margin-left: 4px;
+  padding: 1px;
   font-size: clamp(14px,1.5vw,18px);
 }
 
@@ -440,6 +446,7 @@ h5{
 }
 .footerPayMethods .footerPaymentMethodsImg{
   height: 32px;
+  width: 56px;
   background-color: white;
   border-radius: 6px;
   padding: 4px;
@@ -514,5 +521,6 @@ footer .autor {
   }
   .footerPayMethods .footerPaymentMethodsImg{
       height: 52px;
+      width: 100px;
   }
 }
