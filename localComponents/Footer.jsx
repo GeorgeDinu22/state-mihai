@@ -107,7 +107,7 @@ export default function Footer() {
 
       <div className="footerBottom">
         <div className="copyright">
-          ©{currentYear} Mihai State | Toate drepturile rezervate
+          ©{currentYear} State Mihai | Toate drepturile rezervate
         </div>
         <span>-</span>
         <div className="developer">
