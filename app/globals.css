@@ -329,198 +329,220 @@ header .logo{
   }
 }
 
-
-/* FOOTER */
-
-footer{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    padding-top: 16px;
-    margin-top: 16px;
-    border-top:1px solid grey;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    overflow: hidden;
-}
-.containerFooter{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-}
-.containerFooter .titluFooter{
-    background: var(--gradientColor);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;   
-    font-weight: 750;
-    font-size: clamp(24px,2vw,32px);
-    margin-left: 10px;
+/* Containerul Principal */
+.siteFooter {
+  width: 100%;
+  background-color: #000000; 
+  color: #e0e0e0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.5); 
+  border-radius: 14px; 
 }
 
-footer .containerSocial{
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    justify-content: center;
-    margin-right: 12px;
-}
-footer .containerSocial a{
-    text-decoration: none;
-    background-color: var(--mainColor);
-    padding: 6px;
-    border-radius: 5px;
+/* Structura pe Coloane (Partea de sus) */
+.footerTop {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
 }
 
-.containerLegalFooter{
-    font-weight: 600;
-    margin-left: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    width: 100%;
-    gap: 2px;
+.footerCol {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
 }
-h5{
-  color: white;
-  font-weight: 650;
-  margin-bottom: 4px;
+
+.footerTitle {
+  font-size: 28px;
+  font-weight: 800;
+  background: var(--gradientColor);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: non e;
+}
+
+.footerSubtitle {
+  font-size: 15px;
+  color: #a0a0a0;
+  line-height: 1.5;
+}
+
+.footerHeading {
   font-size: clamp(18px,2vw,22px);
-}
-.linkLegal{
-  color: white;
-  padding: 4px;
-  padding-left: 0px;
-  text-decoration: underline;
-  margin-left: 4px;
-  font-size: clamp(14px,1.5vw,18px);
-}
-.icon{
-  color: var(--mainColor);
-  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
 }
 
-.footerInfo{
-  width: 100%;
-  margin-left: 16px;
+.footerList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  color: white;
-}
-.footerInfo p{
-  margin-left: 4px;
-  padding: 1px;
-  font-size: clamp(14px,1.5vw,18px);
-}
-.footerInfo a{
-  margin-left: 4px;
-  padding: 1px;
-  font-size: clamp(14px,1.5vw,18px);
+  gap: 14px;
 }
 
-.footerBanners{
-  width: 100%;
+.footerList a {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s ease;
+}
+
+.footerList a:hover {
+  color: #ffffff;
+}
+
+.listIcon {
+  margin-right: 10px;
+  color: var(--mainColor, #4facfe);
+  flex-shrink: 0;
+}
+
+.companyInfo {
+  display: flex;
+  align-items: flex-start;
+  color: #cccccc;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.companyIcon {
+  margin-top: 4px;
+}
+
+.companyInfo div {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  align-items: start;
-  margin-top: 16px;
-}
-.footerBanners img{
-  width: 200px;
-  margin-left: 12px;
-  border-radius: 6px;
-  background-color: white;
 }
 
-.footerPayMethods{
-   width: 100%;
+.socialContainer {
   display: flex;
-  gap: 20px;
+  gap: 12px;
+  margin-top: 8px; 
+}
+
+.socialIcon {
+  display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 16px;
+  width: 40px;
+  height: 40px;
+  background: var(--gradientColor);
+  border-radius: 8px;
+  color: #ffffff;
+  transition: all 0.3s ease;
 }
-.footerPayMethods .footerPaymentMethodsImg{
-  height: 32px;
-  width: 56px;
-  background-color: white;
+
+.socialIcon:hover {
+  background-color: var(--mainColor, #4facfe);
+  border-color: transparent;
+  transform: translateY(-2px);
+}
+
+/* Zona de Încredere (Certificări și Plăți) */
+.trustCol {
+  gap: 24px;
+     
+}
+
+.paymentMethods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.payIconWrap {
+  background-color: #ffffff;
+  padding: 6px 10px;
   border-radius: 6px;
-  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-footer .autor {
-    font-size:clamp(14px,4vw,20px);
-    text-align: center;
-    opacity: 0.8;
-    margin-left: auto;
-    margin-right: auto;
-    width: 90%;
-    line-height: 1.35;
-    color: white;
-    margin-bottom: 8px;
-    margin-top: 20px;
+.payIconWrap img {
+  width: auto;
+  height: 20px; 
+  object-fit: contain;
 }
 
-@media(min-width:750px){
-  .containerFooter .titluFooter{
-    margin-left: 16px;
+.trustBadges {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.badgeWrap img {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  border-radius: 6px;
+  background-color: transparent;
+}
+
+.footerBottom {  
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px; 
+  color: #cecece; 
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.footerBottom span{
+  display: none ;
+}
+
+.devLink {
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.devLink:hover {
+  opacity: 0.8;
+}
+
+.footerBreakLine{ 
+  width: 90%;
+  margin: 0 auto;
+  opacity: 0.2; 
+  height: 1px; 
+  background-color: white;
+}
+
+@media (min-width: 768px) {
+  .footerTop {
+    grid-template-columns: repeat(2, 1fr);
   }
-    .containerFooter h6{
-        font-size: 20px;
-        margin-left: 10px;
-    }
-    footer .containerSocial{
-        display: flex;
-        gap: 14px;
-        align-items: center;
-        justify-content: center;
-        margin-right: 16px;
-    }
-    footer .containerSocial a{
-        text-decoration: none;
-        padding: 9px;
-        border-radius: 6px;
-    }
-    footer .containerSocial a i{
-        color:white;
-        font-size: 26px;
-    }
-    .containerLegalFooter{
-        margin-left: 32px;
-    }
-    .footerInfo{
-      margin-left: 32px;
-    }
-
-  .footerBanners{
-    width: 100%;
-    display: flex;
+  .footerBottom span{
+    display: block;
+  }
+  
+  .footerBottom {
     flex-direction: row;
-    gap: 20px;
-    align-items: center;
+    padding: 16px 48px;
     justify-content: center;
-    margin-top: 16px;
   }
-  .footerBanners img{
-    width: 275px;
-    margin-left: 12px;
-    border-radius: 10px;
+  
+  .trustBadges {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
+} 
 
-  .footerPayMethods{
-    width: 100%;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    justify-content: center;
-    margin-top: 12px;
-  }
-  .footerPayMethods .footerPaymentMethodsImg{
-      height: 52px;
-      width: 100px;
+@media (min-width: 1024px) {
+  .footerTop {   
+    grid-template-columns:1.75fr 1.5fr 1.5fr 2.5fr;
+    gap: 30px;
   }
 }

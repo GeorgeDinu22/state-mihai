@@ -1,111 +1,118 @@
 import Link from "next/link";
-import { Instagram } from 'lucide-react'
 import Image from "next/image";
+import { Instagram, Smartphone, Mail, Building2, ArrowRight } from 'lucide-react';
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer id="contact">
-      <div className="containerFooter">
-        <Link className="titluFooter" href="/">Mihai State</Link>
-
-        <div className="containerSocial">
-          <Link className="cardSocial"
-            id="tiktok"
-            aria-label="Profil TikTok State Mihai"
-            href="https://www.tiktok.com/@state.mihai33?_t=ZN-8yFNoqJ0FHC&_r=1"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-        <svg 
-          viewBox="0 0 32 32" 
-          xmlns="http://www.w3.org/2000/svg" 
-          width="24" 
-          height="24" 
-          fill="#000000"
-        >
-          <title>tiktok</title>
-          <path d="M16.656 1.029c1.637-0.025 3.262-0.012 4.886-0.025 0.054 2.031 0.878 3.859 2.189 5.213l-0.002-0.002c1.411 1.271 3.247 2.095 5.271 2.235l0.028 0.002v5.036c-1.912-0.048-3.71-0.489-5.331-1.247l0.082 0.034c-0.784-0.377-1.447-0.764-2.077-1.196l0.052 0.034c-0.012 3.649 0.012 7.298-0.025 10.934-0.103 1.853-0.719 3.543-1.707 4.954l0.020-0.031c-1.652 2.366-4.328 3.919-7.371 4.011l-0.014 0c-0.123 0.006-0.268 0.009-0.414 0.009-1.73 0-3.347-0.482-4.725-1.319l0.040 0.023c-2.508-1.509-4.238-4.091-4.558-7.094l-0.004-0.041c-0.025-0.625-0.037-1.25-0.012-1.862 0.49-4.779 4.494-8.476 9.361-8.476 0.547 0 1.083 0.047 1.604 0.136l-0.056-0.008c0.025 1.849-0.050 3.699-0.050 5.548-0.423-0.153-0.911-0.242-1.42-0.242-1.868 0-3.457 1.194-4.045 2.861l-0.009 0.030c-0.133 0.427-0.21 0.918-0.21 1.426 0 0.206 0.013 0.41 0.037 0.61l-0.002-0.024c0.332 2.046 2.086 3.59 4.201 3.59 0.061 0 0.121-0.001 0.181-0.004l-0.009 0c1.463-0.044 2.733-0.831 3.451-1.994l0.010-0.018c0.267-0.372 0.45-0.822 0.511-1.311l0.001-0.014c0.125-2.237 0.075-4.461 0.087-6.698 0.012-5.036-0.012-10.060 0.025-15.083z"></path>
-        </svg>
-          </Link>
-
-          <Link className="cardSocial"
-            id="instagram"
-            href="https://www.instagram.com/state.mihai/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Profil Instagram State Mihai"
-          >
-            <Instagram  strokeWidth={3}/>
-          </Link>
+    <footer id="contact" className="siteFooter">
+      <div className="footerTop">
+        
+        <div className="footerCol brandCol">
+          <Link href="/" className="footerTitle">Mihai State</Link>
+          
+          <div className="socialContainer">
+            <Link 
+              href="https://www.tiktok.com/@state.mihai33?_t=ZN-8yFNoqJ0FHC&_r=1"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Profil TikTok State Mihai"
+              className="socialIcon"
+            >
+              <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor">
+                <path d="M16.656 1.029c1.637-0.025 3.262-0.012 4.886-0.025 0.054 2.031 0.878 3.859 2.189 5.213l-0.002-0.002c1.411 1.271 3.247 2.095 5.271 2.235l0.028 0.002v5.036c-1.912-0.048-3.71-0.489-5.331-1.247l0.082 0.034c-0.784-0.377-1.447-0.764-2.077-1.196l0.052 0.034c-0.012 3.649 0.012 7.298-0.025 10.934-0.103 1.853-0.719 3.543-1.707 4.954l0.020-0.031c-1.652 2.366-4.328 3.919-7.371 4.011l-0.014 0c-0.123 0.006-0.268 0.009-0.414 0.009-1.73 0-3.347-0.482-4.725-1.319l0.040 0.023c-2.508-1.509-4.238-4.091-4.558-7.094l-0.004-0.041c-0.025-0.625-0.037-1.25-0.012-1.862 0.49-4.779 4.494-8.476 9.361-8.476 0.547 0 1.083 0.047 1.604 0.136l-0.056-0.008c0.025 1.849-0.050 3.699-0.050 5.548-0.423-0.153-0.911-0.242-1.42-0.242-1.868 0-3.457 1.194-4.045 2.861l-0.009 0.030c-0.133 0.427-0.21 0.918-0.21 1.426 0 0.206 0.013 0.41 0.037 0.61l-0.002-0.024c0.332 2.046 2.086 3.59 4.201 3.59 0.061 0 0.121-0.001 0.181-0.004l-0.009 0c1.463-0.044 2.733-0.831 3.451-1.994l0.010-0.018c0.267-0.372 0.45-0.822 0.511-1.311l0.001-0.014c0.125-2.237 0.075-4.461 0.087-6.698 0.012-5.036-0.012-10.060 0.025-15.083z"></path>
+              </svg>
+            </Link>
+            <Link 
+              href="https://www.instagram.com/state.mihai/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Profil Instagram State Mihai"
+              className="socialIcon"
+            >
+              <Instagram size={22} strokeWidth={2.5}/>
+            </Link>
+          </div>
         </div>
+
+        <div className="footerCol">
+          <h4 className="footerHeading">Navigare Legală</h4>
+          <ul className="footerList">
+            <li>
+              <Link href="/politica-de-confidentialitate">
+                <ArrowRight size={16} className="listIcon" /> Politica de Confidențialitate
+              </Link>
+            </li>
+            <li>
+              <Link href="/termeni-si-conditii/">
+                <ArrowRight size={16} className="listIcon" /> Termeni și condiții
+              </Link>
+            </li>
+            <li>
+              <Link href="/politica-retur/">
+                <ArrowRight size={16} className="listIcon" /> Politica de Retur
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div className="footerCol">
+          <h4 className="footerHeading">Contact</h4>
+          <ul className="footerList contactList">
+            <li>
+              <a href="tel:+40746113737">
+                <Smartphone size={18} className="listIcon" /> +40 746 113 737
+              </a>
+            </li>
+            <li>
+              <a href="mailto:contact@statemihai.ro">
+                <Mail size={18} className="listIcon" /> contact@statemihai.ro
+              </a>
+            </li>
+            <li className="companyInfo">
+              <Building2 size={18} className="listIcon companyIcon" />
+              <div>
+                <span>S.C. NEW SPORT GENERATION S.R.L.</span>
+                <span>CUI: 36650195</span>
+                <span>București</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div className="footerCol trustCol">
+          <h4 className="footerHeading">Certificări & Tranzacții Securizate</h4>
+          
+          <div className="paymentMethods">
+            <div className="payIconWrap"><Image src="/footerImages/visa.webp" width={50} height={30} alt="Visa" /></div>
+            <div className="payIconWrap"><Image src="/footerImages/mastercard.png" width={50} height={30} alt="Mastercard" /></div>
+            <div className="payIconWrap"><Image src="/footerImages/applePay.png" width={50} height={30} alt="Apple Pay" /></div>
+            <div className="payIconWrap"><Image src="/footerImages/googlePay.png" width={50} height={30} alt="Google Pay" /></div>
+          </div>
+
+          <div className="trustBadges">
+            <Link aria-label="Ce este SAL?" href="https://anpc.ro/ce-este-sal/" className="badgeWrap">
+              <Image src="/footerImages/anpc.png" width={200} height={60} alt="ANPC SAL" />
+            </Link>
+            <Link aria-label="Solutionarea Litigiilor Online" href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=RO" className="badgeWrap">
+              <Image src="/footerImages/solutionareaLitigiilor.png" width={200} height={60} alt="SOL" />
+            </Link>
+          </div>
+        </div>
+
       </div>
 
-      <div className="containerLegalFooter">
-        <h5>Informații legale</h5>
-        <Link className="linkLegal" href="/politica-de-confidentialitate">
-          Politica de Confidențialitate
-        </Link>
-         <Link className="linkLegal" href="/termeni-si-conditii/">
-         Termeni și condiții
-        </Link>
-         <Link className="linkLegal" href="/politica-retur/">
-         Politica de Retur
-        </Link>
-      </div>
+      <div className="footerBreakLine"></div>
 
-       <div className="footerInfo">
-         <h5>Date contact</h5>
-          <p>S.C. NEW SPORT GENERATION S.R.L</p>
-          <p>
-            CUI: 36650195<br />
-            București
-          </p>
-          <a href="mailto:contact@mihaistate.ro">
-            E-mail: contact@statemihai.ro
-          </a>
-          <a href="tel:+40746113737">
-            Tel: +40 746 113 737
-          </a>
+      <div className="footerBottom">
+        <div className="copyright">
+          ©{currentYear} Mihai State | Toate drepturile rezervate
         </div>
-
-        <div className="footerBanners">
-          <Link aria-label="Ce este SAL?" href="https://anpc.ro/ce-este-sal/">
-            <Image src="/footerImages/anpc.png" width={550} height={550} alt=""/>
-          </Link>
-          <Link aria-label="Solutionarea Litigiilor Online" href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=RO">
-            <Image  src="/footerImages/solutionareaLitigiilor.png" width={550} height={550} alt=""/>
-          </Link>
+        <span>-</span>
+        <div className="developer">
+          Dezvoltat de <Link href="https://www.georgeweb-design.ro/" target="_blank" className="devLink">George Web Design</Link>
         </div>
-
-        <div className="footerPayMethods">
-            <Image
-             className="footerPaymentMethodsImg" 
-             src="/footerImages/visa.webp"
-             width={400}
-             height={400}
-             alt=""/>
-            <Image
-             className="footerPaymentMethodsImg" 
-             src="/footerImages/mastercard.png"
-             width={400}
-             height={400}
-             alt=""/>
-            <Image
-             className="footerPaymentMethodsImg"
-              src="/footerImages/applePay.png"
-              width={400}
-             height={400}
-             alt=""/>
-            <Image
-             className="footerPaymentMethodsImg" 
-             src="/footerImages/googlePay.png"
-             width={400}
-             height={400}
-             alt=""/>
-        </div>
-
-      <div className="autor">
-        ©State Mihai | Toate Drepturile Rezervate - Created by Dinu George
       </div>
     </footer>
   );
