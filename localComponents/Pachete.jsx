@@ -12,6 +12,8 @@ export default function Pachete({produse}){
     const titluRef = useRef(null);
     const infoRef = useRef(null);
 
+    console.log("Produse: ",produse)
+
     const [show, setShow] = useState(false);
     const [pachetPressed, setPachetPressed] = useState(null);
     const [pachetInfo, setPachetInfo] = useState(null);
@@ -132,12 +134,13 @@ export default function Pachete({produse}){
             )}
           </ul>
 
-          <ul className={styles.excludes}>
-            <p className={styles.excludedTitle}>Exclude</p>
-            {excludedList.length > 0 && (
-              excludedList.map((item, i) => <li key={i}>{item}</li>)
-            )}
-          </ul>
+          {excludedList.length > 0 && (
+            <ul className={styles.excludes}>
+              {excludedList.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
+          )}
 
           <div
             onClick={() => HandlePachetClick(prod)}
