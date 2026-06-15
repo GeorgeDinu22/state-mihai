@@ -47,6 +47,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         row-gap: 32px;
+        margin: 72px 0;
     }
     .bodyAboutMe h2{
         grid-column: 1/3;

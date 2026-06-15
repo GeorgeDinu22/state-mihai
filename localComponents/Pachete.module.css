@@ -311,6 +311,9 @@ background: linear-gradient(45deg, #ffd633, #ff9900);
 }
 
 @media(min-width:1000px){
+    .bodyPachete{
+        margin: 72px 0;
+    }
     .infoPachete{
         width: max-content;
         padding: 12px;

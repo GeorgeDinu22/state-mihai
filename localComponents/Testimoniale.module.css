@@ -89,6 +89,9 @@
 }
 
 @media(min-width:750px){
+    .testimonialeBody{
+        padding: 80px 0;
+    }
     .containerTestimoniale{
         display: grid;
         max-width: 1000px;
