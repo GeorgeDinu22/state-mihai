@@ -37,7 +37,7 @@ export default function Footer() {
         </div>
 
         <div className="footerCol">
-          <h4 className="footerHeading">Navigare Legală</h4>
+          <h4 className="footerHeading">Legal</h4>
           <ul className="footerList">
             <li>
               <Link href="/politica-de-confidentialitate">
@@ -82,7 +82,6 @@ export default function Footer() {
         </div>
 
         <div className="footerCol trustCol">
-          <h4 className="footerHeading">Certificări & Tranzacții Securizate</h4>
           
           <div className="paymentMethods">
             <div className="payIconWrap"><Image src="/footerImages/visa.webp" width={50} height={30} alt="Visa" /></div>
