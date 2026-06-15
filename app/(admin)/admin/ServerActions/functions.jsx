@@ -39,7 +39,6 @@ async function validateAdmin() {
         throw new Error("Eroare autentificare");
     }
 
-    console.log("USER ESTE:", user?.email, "ROLE:", user?.app_metadata?.role);
 
     if (!user || user.app_metadata?.role !== 'admin') {
       throw new Error("Acces neautorizat! Trebuie să fii administrator.");

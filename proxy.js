@@ -35,12 +35,8 @@ export default async function Proxy(request) {
   } = await supabase.auth.getUser()
 
 if (request.nextUrl.pathname.startsWith('/admin')) {
-  console.log("--- DEBUG ADMIN ---");
-  console.log("Email user:", user?.email);
-  console.log("Metadata completa:", JSON.stringify(user?.app_metadata));
   
   if (!user || user.app_metadata?.role !== 'admin') {
-     console.log("ACCES REFUZAT: Rolul 'admin' lipsește.");
       const url = request.nextUrl.clone()
       url.pathname = '/login'
       url.searchParams.set('next', request.nextUrl.pathname)

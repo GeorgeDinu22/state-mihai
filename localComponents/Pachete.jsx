@@ -12,7 +12,6 @@ export default function Pachete({produse}){
     const titluRef = useRef(null);
     const infoRef = useRef(null);
 
-    console.log("Produse: ",produse)
 
     const [show, setShow] = useState(false);
     const [pachetPressed, setPachetPressed] = useState(null);

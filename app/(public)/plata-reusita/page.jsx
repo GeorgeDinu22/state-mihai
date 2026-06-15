@@ -32,11 +32,9 @@ export default async function SuccessPage({searchParams}) {
 
           if(dataClient){
             client = dataClient;
-            console.log(client)
           }
 
           if(dataErr){
-            console.log("eroare este ", error)
             throw new Error;
           }
       }
